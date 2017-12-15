@@ -21,7 +21,6 @@ namespace BusUI.Model
     public class MyWidgetProvider : AppWidgetProvider
     {
         private static string ACTION_CLICK = "ACTION_CLICK";
-        private static int cnt = 0;
         private List<string> _stops = new List<string> { "302375", "303575", "302376", "302419" };
 
         public override void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
@@ -38,6 +37,9 @@ namespace BusUI.Model
                 //remoteViews.SetTextViewText(Resource.Id.update, updatedText);
                 GetUpdate(remoteViews);
 
+
+                //Bundle options = appWidgetManager.GetAppWidgetOptions(widgetId);
+                //layout = RemoteViewsFactory.CreateLayout(context, id, options);
 
 
                 Intent intent = new Intent(context, typeof(MyWidgetProvider));
@@ -74,6 +76,7 @@ namespace BusUI.Model
 
         private void GetUpdate(RemoteViews remoteViews)
         {
+
             GetInfo("302375", out string station, out string schedule);
             remoteViews.SetTextViewText(Resource.Id.station1, station);
             remoteViews.SetTextViewText(Resource.Id.sche1, schedule);
@@ -107,13 +110,13 @@ namespace BusUI.Model
                 cnt--;
                 if (cnt == 0) break;
             }
-            station = schedules?[0]?.MonitoredVehicleJourney?.MonitoredCall?.StopPointName;
+            station = (schedules.Length > 0) ? schedules?[0]?.MonitoredVehicleJourney?.MonitoredCall?.StopPointName : "";
             schedule = sb.ToString();
         }
 
         private void BuildView(RemoteViews remoteViews, Context context)
         {
-
+            
 
             GridLayout gv = new GridLayout(context)
             {
@@ -134,6 +137,7 @@ namespace BusUI.Model
 
 
     }
+
 
 
 }
