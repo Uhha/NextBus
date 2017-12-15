@@ -5,27 +5,26 @@
     p1:minHeight="25px"
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
-    p1:id="@+id/linearLayout1"
-    
-              >
+    p1:id="@+id/linearLayout1">
     <GridLayout
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:id="@+id/gridLayout1"
         p1:columnCount="1"
-        p1:rowCount="2"
-       
-        >
+        p1:rowCount="2">
+      <TextView
+            p1:text=""
+            p1:id="@+id/stop1"
+            p1:textSize="8sp"
+            p1:maxLines="1"
+            p1:inputType="textNoSuggestions"
+            p1:paddingLeft="14sp" />
         <TextView
-            p1:text="Small Text"
-            p1:id="@+id/station1"
-            p1:textSize="6sp" 
-            
-            />
-        <TextView
-            p1:text="Small Text"
+            p1:text=""
             p1:id="@+id/sche1"
-            p1:textSize="12sp" />
+            p1:textSize="12sp"
+            p1:maxLines="1"
+            p1:inputType="textNoSuggestions" />
     </GridLayout>
     <GridLayout
         p1:layout_width="match_parent"
@@ -34,13 +33,17 @@
         p1:columnCount="1"
         p1:rowCount="2">
         <TextView
-            p1:text="Small Text"
-            p1:id="@+id/station2"
-            p1:textSize="6sp" />
+            p1:text=""
+            p1:id="@+id/stop2"
+            p1:textSize="8sp"
+            p1:maxLines="1"
+            p1:inputType="textNoSuggestions"
+            p1:paddingLeft="14sp" />
         <TextView
-            p1:text="Small Text"
+            p1:text=""
             p1:id="@+id/sche2"
-            p1:textSize="12sp" />
+            p1:textSize="12sp"
+            p1:maxLines="1"
+            p1:inputType="textNoSuggestions" />
     </GridLayout>
 </LinearLayout>
-

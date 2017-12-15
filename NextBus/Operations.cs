@@ -31,10 +31,10 @@ namespace NextBus
             return null;
         }
 
-        public static Monitoredstopvisit[] ScheduleForStop(string stopid)
+        public static Monitoredstopvisit[] ScheduleForStop(string stopid, string maxBusses = "5")
         {
-            //http://bustime.mta.info/api/siri/stop-monitoring.json?key=90812fb6-f00c-4b89-8b77-1cda6b2830cf&OperatorRef=MTA&MonitoringRef=302376
-            string parameters = $"siri/stop-monitoring.json?key={ConfigurationValues.ApiKey}&OperatorRef=MTA&MonitoringRef={stopid}";
+            //http://bustime.mta.info/api/siri/stop-monitoring.json?key=90812fb6-f00c-4b89-8b77-1cda6b2830cf&OperatorRef=MTA&MonitoringRef=302376&MaximumStopVisits=5
+            string parameters = $"siri/stop-monitoring.json?key={ConfigurationValues.ApiKey}&OperatorRef=MTA&MonitoringRef={stopid}&MaximumStopVisits={maxBusses}";
             HttpResponseMessage response = HttpClientWrapper.GetClient().GetAsync(ConfigurationValues.AccessPoint + parameters).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -47,6 +47,19 @@ namespace NextBus
         internal static Monitoredstopvisit[] ScheduleForStop(Stop stop)
         {
             return ScheduleForStop(stop.id);
+        }
+
+        public static StopDetails GetStopById(string id)
+        {
+            //http://bustime.mta.info/api/where/stop/MTA_302375.xml?key=90812fb6-f00c-4b89-8b77-1cda6b2830cf
+            string parameters = $"where/stop/MTA_{id}.json?key={ConfigurationValues.ApiKey}";
+            HttpResponseMessage response = HttpClientWrapper.GetClient().GetAsync(ConfigurationValues.AccessPoint + parameters).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var data = response.Content.ReadAsAsync<StopDetails>().Result;
+                return data;
+            }
+            return null;
         }
 
         public static Location GetGeoCoordinatesFromAddress(string address)

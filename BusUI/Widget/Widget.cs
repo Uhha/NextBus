@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Appwidget;
 using Android.Locations;
-
+using NextBus;
 
 namespace BusUI.Model
 {
@@ -37,6 +37,8 @@ namespace BusUI.Model
                 //remoteViews.SetTextViewText(Resource.Id.update, updatedText);
                 GetUpdate(remoteViews);
 
+
+                //(ProgressDialogStyle.Horizontal)
 
                 //Bundle options = appWidgetManager.GetAppWidgetOptions(widgetId);
                 //layout = RemoteViewsFactory.CreateLayout(context, id, options);
@@ -77,22 +79,23 @@ namespace BusUI.Model
         private void GetUpdate(RemoteViews remoteViews)
         {
 
-            GetInfo("302375", out string station, out string schedule);
-            remoteViews.SetTextViewText(Resource.Id.station1, station);
+
+            GetInfo("302419", out string stopDetails, out string schedule);
+            remoteViews.SetTextViewText(Resource.Id.stop1, stopDetails);
             remoteViews.SetTextViewText(Resource.Id.sche1, schedule);
 
-            GetInfo("303575", out station, out schedule);
-            remoteViews.SetTextViewText(Resource.Id.station2, station);
+            GetInfo("303575", out stopDetails, out schedule);
+            remoteViews.SetTextViewText(Resource.Id.stop2, stopDetails);
             remoteViews.SetTextViewText(Resource.Id.sche2, schedule);
             
         }
 
-        private void GetInfo(string stationId, out string station, out string schedule)
+        private void GetInfo(string stopid, out string stopDetails, out string schedule)
         {
-            var schedules = NextBus.Operations.ScheduleForStop(stationId);
+            var schedules = NextBus.Operations.ScheduleForStop(stopid);
             if (schedules == null)
             {
-                station = "";
+                stopDetails = "";
                 schedule = "";
                 return;
             }
@@ -110,8 +113,9 @@ namespace BusUI.Model
                 cnt--;
                 if (cnt == 0) break;
             }
-            station = (schedules.Length > 0) ? schedules?[0]?.MonitoredVehicleJourney?.MonitoredCall?.StopPointName : "";
             schedule = sb.ToString();
+            var stopObj = Operations.GetStopById("302375");
+            stopDetails = (stopObj != null) ? $"{stopObj.data.name} - {stopObj.data.direction} ({stopObj.data.routes.Select(o => o.shortName).Aggregate((a, b) => a + "," + b)})" : "";
         }
 
         private void BuildView(RemoteViews remoteViews, Context context)

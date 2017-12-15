@@ -59,10 +59,11 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Model\LocationFinder.cs" />
-    <Compile Include="Model\Widget.cs" />
+    <Compile Include="Widget\Widget.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartActivity.cs" />
+    <Compile Include="Widget\WidgetRemoveViewFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -88,10 +88,10 @@ namespace BusUI
 			public const int sche2 = 2131165200;
 			
 			// aapt resource value: 0x7f07000c
-			public const int station1 = 2131165196;
+			public const int stop1 = 2131165196;
 			
 			// aapt resource value: 0x7f07000f
-			public const int station2 = 2131165199;
+			public const int stop2 = 2131165199;
 			
 			// aapt resource value: 0x7f070005
 			public const int stopsNear = 2131165189;

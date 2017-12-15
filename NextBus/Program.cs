@@ -12,7 +12,7 @@ namespace NextBus
 
         static void Main(string[] args)
         {
-
+            var stop1 = Operations.GetStopById("302375");
 
             var stops = Operations.StopsNearMe(40.682607f,-73.961773f, 0.005f);
             //var stops = Operations.StopsNearMe(40.767496, -73.691098, 0.015);
