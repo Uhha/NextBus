@@ -26,6 +26,7 @@ namespace BusUI
         {
             base.OnCreate(savedInstanceState);
 
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -101,6 +102,8 @@ namespace BusUI
             }
             _sb.AppendNotify(sb.ToString());
         }
+
+        
 
 
         private void AddressButton_OnClick(object sender, EventArgs eventArgs)
