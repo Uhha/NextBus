@@ -1,49 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
-    p1:orientation="vertical"
-    p1:minWidth="25px"
-    p1:minHeight="25px"
-    p1:layout_width="match_parent"
-    p1:layout_height="match_parent"
-    p1:id="@+id/linearLayout1">
-    <GridLayout
-        p1:layout_width="match_parent"
-        p1:layout_height="wrap_content"
-        p1:id="@+id/gridLayout1"
-        p1:columnCount="1"
-        p1:rowCount="2">
-      <TextView
-            p1:text=""
-            p1:id="@+id/stop1"
-            p1:textSize="8sp"
-            p1:maxLines="1"
-            p1:inputType="textNoSuggestions"
-            p1:paddingLeft="14sp" />
-        <TextView
-            p1:text=""
-            p1:id="@+id/sche1"
-            p1:textSize="12sp"
-            p1:maxLines="1"
-            p1:inputType="textNoSuggestions" />
-    </GridLayout>
-    <GridLayout
-        p1:layout_width="match_parent"
-        p1:layout_height="wrap_content"
-        p1:id="@+id/gridLayout2"
-        p1:columnCount="1"
-        p1:rowCount="2">
-        <TextView
-            p1:text=""
-            p1:id="@+id/stop2"
-            p1:textSize="8sp"
-            p1:maxLines="1"
-            p1:inputType="textNoSuggestions"
-            p1:paddingLeft="14sp" />
-        <TextView
-            p1:text=""
-            p1:id="@+id/sche2"
-            p1:textSize="12sp"
-            p1:maxLines="1"
-            p1:inputType="textNoSuggestions" />
-    </GridLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1">
+    <!--<ImageButton
+        android:src="@drawable/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton1"
+        android:layout_marginLeft="0.0dp"
+        android:layout_marginBottom="0.0dp" />-->
+    <ListView
+        android:id="@+id/widgetList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/empty_string"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:visibility="gone" />
 </LinearLayout>

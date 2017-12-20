@@ -12,6 +12,10 @@ using Android.Widget;
 using Android.Locations;
 using BusUI.Model;
 using Android.Views.InputMethods;
+using Android.Support.V4.Widget;
+using Android.Graphics;
+using System.ComponentModel;
+using Java.Lang;
 
 namespace BusUI
 {
@@ -19,7 +23,7 @@ namespace BusUI
     public class StartActivity : Activity, ILocationListener
     {
         InputMethodManager imm;
-        private StringBuilder _sb;
+        private System.Text.StringBuilder _sb;
         private LocationFinder _locationFinder;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -33,7 +37,7 @@ namespace BusUI
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
             
 
-            _sb = new StringBuilder();
+            _sb = new System.Text.StringBuilder();
             var locationManager = (LocationManager)GetSystemService(LocationService);
             _locationFinder = new LocationFinder(locationManager, this);
             SBExtentions.SBAppended += SBExtentions_SBAppended;
@@ -90,7 +94,7 @@ namespace BusUI
             var text = FindViewById<EditText>(Resource.Id.byId).Text;
             var schedules = NextBus.Operations.ScheduleForStop(text);
             if (schedules == null) return;
-            StringBuilder sb = new StringBuilder();
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
             foreach (var sched in schedules)
             {
                 TimeSpan ts = (sched.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime).Subtract(DateTime.Now);

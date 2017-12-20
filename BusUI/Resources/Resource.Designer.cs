@@ -45,7 +45,10 @@ namespace BusUI
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Shape1 = 2130837504;
+			public const int btn = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Shape1 = 2130837505;
 			
 			static Drawable()
 			{
@@ -63,41 +66,44 @@ namespace BusUI
 			// aapt resource value: 0x7f070006
 			public const int addressButton = 2131165190;
 			
+			// aapt resource value: 0x7f070009
+			public const int btnaddnewmech = 2131165193;
+			
 			// aapt resource value: 0x7f070001
 			public const int byAddress = 2131165185;
 			
 			// aapt resource value: 0x7f070003
 			public const int byId = 2131165187;
 			
-			// aapt resource value: 0x7f07000b
-			public const int gridLayout1 = 2131165195;
-			
-			// aapt resource value: 0x7f07000e
-			public const int gridLayout2 = 2131165198;
-			
-			// aapt resource value: 0x7f070008
-			public const int layout = 2131165192;
-			
-			// aapt resource value: 0x7f07000a
-			public const int linearLayout1 = 2131165194;
-			
-			// aapt resource value: 0x7f07000d
-			public const int sche1 = 2131165197;
+			// aapt resource value: 0x7f07000f
+			public const int empty_view = 2131165199;
 			
 			// aapt resource value: 0x7f070010
-			public const int sche2 = 2131165200;
+			public const int gridLayout1 = 2131165200;
 			
-			// aapt resource value: 0x7f07000c
-			public const int stop1 = 2131165196;
+			// aapt resource value: 0x7f07000b
+			public const int layout = 2131165195;
 			
-			// aapt resource value: 0x7f07000f
-			public const int stop2 = 2131165199;
+			// aapt resource value: 0x7f07000d
+			public const int linearLayout1 = 2131165197;
+			
+			// aapt resource value: 0x7f07000a
+			public const int listView1 = 2131165194;
+			
+			// aapt resource value: 0x7f070012
+			public const int schedule = 2131165202;
+			
+			// aapt resource value: 0x7f070011
+			public const int stop = 2131165201;
 			
 			// aapt resource value: 0x7f070005
 			public const int stopsNear = 2131165189;
 			
 			// aapt resource value: 0x7f070004
 			public const int submitBut = 2131165188;
+			
+			// aapt resource value: 0x7f070008
+			public const int swipeRefreshLayout = 2131165192;
 			
 			// aapt resource value: 0x7f070007
 			public const int textDisplay = 2131165191;
@@ -108,8 +114,11 @@ namespace BusUI
 			// aapt resource value: 0x7f070002
 			public const int textView2 = 2131165186;
 			
-			// aapt resource value: 0x7f070009
-			public const int update = 2131165193;
+			// aapt resource value: 0x7f07000c
+			public const int update = 2131165196;
+			
+			// aapt resource value: 0x7f07000e
+			public const int widgetList = 2131165198;
 			
 			static Id()
 			{
@@ -128,10 +137,16 @@ namespace BusUI
 			public const int Main = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int widgetlayout = 2130968577;
+			public const int templayout = 2130968577;
 			
 			// aapt resource value: 0x7f040002
-			public const int widgetlayoutgrid = 2130968578;
+			public const int widgetlayout = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int widgetlayoutgrid = 2130968579;
+			
+			// aapt resource value: 0x7f040004
+			public const int widgetlistitem = 2130968580;
 			
 			static Layout()
 			{
@@ -164,6 +179,9 @@ namespace BusUI
 			
 			// aapt resource value: 0x7f060001
 			public const int app_name = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int empty_string = 2131099650;
 			
 			// aapt resource value: 0x7f060000
 			public const int hello = 2131099648;

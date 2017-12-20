@@ -26,6 +26,7 @@ namespace BusUI
             
 
             StartActivity(typeof(StartActivity));
+            //StartActivity(typeof(TestActivity));
 
             //Thread.Sleep(100000);
         }
